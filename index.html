@@ -6,43 +6,43 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Station météo</title>
+    <link rel="stylesheet" href="./rsc/css/style.css">
 </head>
 
 <body>
     <header>
-        <img src="https://picsum.photos/50" alt="Un beau soleil">
+        <img src="rsc/img/sun1.png" alt="Un beau soleil">
         <h1>Ma station météo</h1>
     </header>
     <main>
-        <section>
-            <h2>&Eacute;phéméride</h2>
-            <div>Nous sommes le &lt;date&gt;</div>
-            <div>Il est hh:mm:ss</div>
-            <div>Le soleil se lève à hh:mm:ss</div>
-            <div>Et se couche à hh:mm:ss</div>
-            <div>Aujourd'hui nous fêtons les &lt;nom&gt;</div>
-        </section>
-        <section>
-            <h2>Météo</h2>
-            <table>
-                <tr>
-                    <td>Mercredi</td>
-                    <td><img src="https://picsum.photos/50" alt="Un beau soleil"></td>
-                    <td>Aujourd'hui le temps est pluvieux</td>
-                </tr>
-                <tr>
-                    <td>Jeudi</td>
-                    <td><img src="https://picsum.photos/50" alt="Un beau soleil"></td>
-                    <td>Demain le temps sera ensoleillé</td>
-                </tr>
-                <tr>
-                    <td>Vendredi</td>
-                    <td><img src="https://picsum.photos/50" alt="Un beau soleil"></td>
-                    <td>Après de main le temps sera maussade</td>
-                </tr>
-            </table>
-        </section>
-        <section>
+        <div>
+            <section id="ephemeris">
+                <h2>&Eacute;phéméride</h2>
+                <div>Nous sommes le &lt;date&gt;</div>
+                <div>Il est hh:mm:ss</div>
+                <div>Le soleil se lève à hh:mm:ss</div>
+                <div>Et se couche à hh:mm:ss</div>
+                <div>Aujourd'hui nous fêtons les &lt;nom&gt;</div>
+            </section>
+            <div id="weather">
+                <div>
+                    <div>Mercredi</div>
+                    <div><img src="rsc/img/pluie.png" alt="Un nuage de pluie"></div>
+                    <div>Aujourd'hui le temps est pluvieux</div>
+                </div>
+                <div>
+                    <div>Jeudi</div>
+                    <div><img src="./rsc/img/sun.png" alt="Un soleil"></div>
+                    <div>Demain le temps sera ensoleillé</div>
+                </div>
+                <div>
+                    <div>Vendredi</div>
+                    <div><img src="./rsc/img/maussade.png" alt="Un nuage de pluie avec un soleil"></div>
+                    <div>Après de main le temps sera maussade</div>
+                </div>
+            </div>
+        </div>
+        <section id="temperature">
             <h2>Températures</h2>
             <figure>
                 <div>12</div>
