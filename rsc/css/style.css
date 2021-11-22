@@ -1,3 +1,115 @@
+@font-face {
+    font-family: satisfy;
+    src: url("../fonts/Satisfy-Regular.ttf");
+}
+
+:root {
+    --font-color: white;
+    --bgcolor: #003809;
+    --section-color: #bfecc6;
+    --cold: #2196f3;
+    --hot: #e86464;
+    --middletemp: #7be575;
+    --anchor-color: #ff0;
+    font-size: 16px;
+}
+
 body {
-    background-color: aquamarine;
+    width: 800px;
+    margin: auto;
+    background-color: var(--bgcolor);
+}
+
+section, main>div>div {
+    background-color: var(--section-color);
+    overflow: auto;
+}
+
+figure:first-of-type>div {
+    background-color: var(--cold);
+}
+
+figure:nth-of-type(2)>div {
+    background-color: var(--hot);
+}
+
+figure:last-of-type>div {
+    background-color: var(--middletemp);
+}
+
+header,
+footer {
+    color: var(--font-color);
+    display: flex;
+    align-items: center;
+}
+
+header {
+    justify-content: center;
+}
+
+header h1 {
+    font-family: satisfy;
+    color: var(--font-color);
+    font-size: 3rem;
+    font-weight: lighter;
+    margin-left: 4rem;
+}
+
+footer {
+    justify-content: space-between;
+}
+
+footer a {
+    color: var(--anchor-color);
+}
+
+main {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    column-gap: 4rem;
+    margin: 2rem auto;
+}
+
+main>div {
+    display: grid;
+    row-gap: 1rem;
+}
+
+#weather>div {
+    display: grid;
+    grid-template-columns: 18% 18% 64%;
+    justify-items: stretch;
+    align-items: stretch;
+}
+
+#weather>div>div {
+    border: 1px solid grey;
+    display: flex;
+    align-items: center;
+}
+
+#temperature {
+    display: grid;
+    grid-template-rows: 10% repeat(3, 1fr);
+    align-items: center;
+    justify-items: center;
+}
+
+#temperature>figure {
+    margin: 0;
+}
+
+#temperature>figure>div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    border-radius: 50%;
+    font-size: 2.8rem;
+}
+
+#temperature>figure>figcaption {
+    text-align: center;
+    margin-top:0.5rem;
 }
