@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Station météo</title>
     <link rel="stylesheet" href="./rsc/css/style.css">
+    <script src="./rsc/js/script.js"></script>
 </head>
 
 <body>
@@ -20,41 +21,41 @@
                 <h2>&Eacute;phéméride</h2>
                 <div>Nous sommes le <span id="date"></span></div>
                 <div>Il est <span id="time"></span></div>
-                <div>Le soleil se lève à hh:mm:ss</div>
-                <div>Et se couche à hh:mm:ss</div>
-                <div>Aujourd'hui nous fêtons les &lt;nom&gt;</div>
+                <div>Le soleil se lève à <span id="sunrise"></span></div>
+                <div>Et se couche à <span id="sunset"></span></div>
+                <div>Aujourd'hui nous fêtons les <span id="saints"></span></div>
             </section>
             <div id="weather">
-                <div>
-                    <div>Mercredi</div>
-                    <div><img src="rsc/img/pluie.png" alt="Un nuage de pluie"></div>
-                    <div>Aujourd'hui le temps est pluvieux</div>
+                <div id="day0Weather">
+                    <div></div>
+                    <div><img src="" alt=""></div>
+                    <div></div>
                 </div>
-                <div>
-                    <div>Jeudi</div>
-                    <div><img src="./rsc/img/sun.png" alt="Un soleil"></div>
-                    <div>Demain le temps sera ensoleillé</div>
+                <div id="day1Weather">
+                    <div></div>
+                    <div><img src="" alt=""></div>
+                    <div></div>
                 </div>
-                <div>
-                    <div>Vendredi</div>
-                    <div><img src="./rsc/img/maussade.png" alt="Un nuage de pluie avec un soleil"></div>
-                    <div>Après de main le temps sera maussade</div>
+                <div id="day2Weather">
+                    <div></div>
+                    <div><img src="" alt=""></div>
+                    <div></div>
                 </div>
             </div>
         </div>
         <section id="temperature">
             <h2>Températures</h2>
             <figure>
-                <div>12</div>
+                <div id="minTemp"></div>
                 <figcaption>Min</figcaption>
             </figure>
             <figure>
-                <div>25</div>
+                <div id="maxTemp"></div>
                 <figcaption>Max</figcaption>
             </figure>
             <figure>
-                <div>18</div>
-                <figcaption>Moyenne</figcaption>
+                <div id="meanTemp"></div>
+                <figcaption>Moy</figcaption>
             </figure>
         </section>
     </main>
@@ -63,7 +64,6 @@
         <div>&Ccedil;a vous plaît ? C'est Moâ qui l'a fait !</div>
         <div>Contacter <a href="mailto:moa@fai.tld">Moâ</a> </div>
     </footer>
-    <script src="./rsc/js/script.js"></script>
 </body>
 
 </html>

@@ -104,9 +104,10 @@ main>div {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 1rem;
+    padding: 0.5rem;
     border-radius: 50%;
-    font-size: 2.8rem;
+    font-size: 2rem;
+    width: 2rem;
 }
 
 #temperature>figure>figcaption {
