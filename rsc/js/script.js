@@ -72,7 +72,7 @@ function updateSaints() {
         .then(obj => {
             const names = [];
             for (const name in obj.response.prenoms.majeurs) names.push(name);
-            document.getElementById("saints").textContent = names.join(',');
+            document.getElementById("saints").textContent = names.join(', ');
         })
         .catch(error => console.error(error));
 }
