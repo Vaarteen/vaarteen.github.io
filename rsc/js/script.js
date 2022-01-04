@@ -34,9 +34,9 @@ function updateWeather() {
         })
         .then(obj => {
             //Lever
-            document.getElementById("sunrise").textcontent = obj.city_info.sunrise;
+            document.getElementById("sunrise").textContent = obj.city_info.sunrise;
             // Coucher
-            document.getElementById("sunset").textcontent = obj.city_info.sunset;
+            document.getElementById("sunset").textContent = obj.city_info.sunset;
             // Météo du jour
             document.querySelector("#day0Weather>div:first-of-type").textContent = obj.fcst_day_0.day_long;
             let img0 = document.querySelector("#day0Weather>div>img");
