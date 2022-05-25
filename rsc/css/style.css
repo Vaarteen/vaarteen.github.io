@@ -50,7 +50,6 @@ header {
 
 header h1 {
     font-family: satisfy;
-    color: var(--font-color);
     font-size: 3rem;
     font-weight: lighter;
     margin-left: 4rem;
