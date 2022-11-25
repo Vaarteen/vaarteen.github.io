@@ -32,3 +32,13 @@ form div {
  form button {
      width: 25%;
  }
+
+.error {
+    visibility: hidden;
+    font-size: 0.6rem;
+    color: red;
+}
+
+.show {
+    visibility: visible;
+}
