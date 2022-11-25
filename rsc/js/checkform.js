@@ -10,14 +10,36 @@ function start() {
  *
  * @returns true si le formulaire est correct, false sinon
  */
-function checkForm() {
+function checkForm(evt) {
     const email = document.getElementById("email");
     const subject = document.getElementById("subject");
     const msg = document.getElementById("msg");
-    if (checkEmpty(msg) || checkEmpty(subject) || !isEmail(email)) {
-        return false;
+    // On nettoie les entrées
+    msg.value = msg.value.trim();
+    subject.value = subject.value.trim();
+    email.value = email.value.trim();
+    let isFormOk = true;
+    if (checkEmpty(msg.value)) {
+        showError(msg);
+        isFormOk = false;
+    } else {
+        hideError(msg);
     }
-    return true;
+    if (checkEmpty(subject.value)) {
+        showError(subject);
+        isFormOk = false;
+    } else {
+        hideError(subject);
+    }
+    if (!isEmail(email.value)) {
+        showError(email);
+        isFormOk = false;
+    } else {
+        hideError(email);
+    }
+    if (!isFormOk) {
+        evt.preventDefault();
+    }
 }
 
 /**
@@ -27,8 +49,8 @@ function checkForm() {
  * @returns true si value est vide, false sinon
  */
 function checkEmpty(value) {
-    if (typeof value !== "string" || value.trim().length == 0) {
-        return false;
+    if (typeof value === "string" && value.length == 0) {
+        return true;
     }
     return false;
 }
@@ -40,8 +62,31 @@ function checkEmpty(value) {
  * @returns true si value est un email valide, false sinon
  */
 function isEmail(value) {
-    if (typeof value !== "string" || !value.match(/^.?.*@.?.*\.[a-zA-Z]{2,5}$/)) {
-        return false;
+    if (checkEmpty(value)) {
+        return true;
+    }
+    if (typeof value === "string" && value.match(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,5}$/g)) {
+        return true;
     }
     return false;
+}
+
+/**
+ * Affiche le message d'erreur associé à elt.
+ *
+ * @param {HTMLElement} elt L'élément en erreur
+ */
+function showError(elt) {
+    const parent = elt.closest("div");
+    parent.lastElementChild.classList.add("show");
+}
+
+/**
+ * Cache le message d'erreur associé à elt.
+ *
+ * @param {HTMLElement} elt L'élément en erreur
+ */
+function hideError(elt) {
+    const parent = elt.closest("div");
+    parent.lastElementChild.classList.remove("show");
 }
