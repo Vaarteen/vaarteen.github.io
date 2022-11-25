@@ -7,8 +7,6 @@ function start() {
 
 /**
  * Vérifie les données du formulaire.
- *
- * @returns true si le formulaire est correct, false sinon
  */
 function checkForm(evt) {
     const email = document.getElementById("email");

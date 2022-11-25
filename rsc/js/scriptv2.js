@@ -7,12 +7,13 @@ let oldDay; // le jour avant màj du contenu
 async function updateContent() {
     // Mise à jour de la date et de l'heure
     updateDate();
-    // Automoatisation de la mise à jour toute les secondes
+    // Automatisation de la mise à jour toute les secondes
     setInterval(updateDate, 1000);
     // Mise à jour de l'éphéméride, des températures et des prévision météo
     await updateEphemerisAndWeatherAndTemperature();
     // Mise à jour des saints du jour
-    await updateSaints();
+    // pas besoin de await car pas de ligne suivante à exécuter
+    updateSaints();
 }
 
 /**
@@ -26,7 +27,8 @@ function updateDate() {
     // On affiche l'heure
     showTime(now);
     // En cas de changement de jour on remet le contenu complet à jour
-    if (oldDay !== undefined && oldDay !== newDay) {
+    // TODO corriger, pas sûr que ça marche bien
+    if (oldDay === undefined || oldDay !== newDay) {
         updateContent();
         // On n'oublie pas de changer le jour de référence !
         oldDay = newDay;
