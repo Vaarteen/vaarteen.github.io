@@ -27,11 +27,11 @@ function updateDate() {
     // On affiche l'heure
     showTime(now);
     // En cas de changement de jour on remet le contenu complet à jour
-    // TODO corriger, pas sûr que ça marche bien
-    if (oldDay === undefined || oldDay !== newDay) {
-        updateContent();
+    if (!oldDay || oldDay !== newDay) {
         // On n'oublie pas de changer le jour de référence !
         oldDay = newDay;
+        // On rappelle la fonction d'update
+        updateContent();
     }
 }
 
