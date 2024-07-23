@@ -11,7 +11,8 @@ function updateTime() {
     const time = new Intl.DateTimeFormat("fr-FR", options).format(now);
     document.getElementById("time").textContent = time;
     // Si on passe à minuit, on change de jour => on met à jour la date
-    if (time === "00:00:00") {
+    // On s'assure de le faire sur les 10 premières secondes, des fois que...
+    if (time.startsWith === "00:00:0") {
         updateDate();
     }
 }

@@ -1,14 +1,14 @@
 window.addEventListener("DOMContentLoaded", updateContent);
-let oldDay; // le jour avant màj du contenu
 
 /**
  * Mise à jour de tout le contenu de la page d'accueil
  */
 async function updateContent() {
+    let oldDay = showDate(Date.now());
     // Mise à jour de la date et de l'heure
-    updateDate();
+    updateDate(oldDay);
     // Automatisation de la mise à jour toute les secondes
-    setInterval(updateDate, 1000);
+    setInterval(updateDate, 1000, oldDay);
     // Mise à jour de l'éphéméride, des températures et des prévision météo
     await updateEphemerisAndWeatherAndTemperature();
     // Mise à jour des saints du jour
@@ -19,7 +19,7 @@ async function updateContent() {
 /**
  * Mise à jour de la date et de l'heure
  */
-function updateDate() {
+function updateDate(oldDay) {
     // On utilise la même date pour l'affichage de la date et de l'heure
     const now = Date.now();
     // On affiche la date et on la récupère pour vérifier le changement de jour
